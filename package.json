@@ -2,7 +2,6 @@
   "name": "preview-popup",
   "description": "Preview link targets on hover in a modal iframe",
   "author": "Eric Jonas <admin@confoundedtechnology.com> (confoundedtechnology.com)",
-  "homepage": "<YOUR_SITE_URL>",
   "repository": {
     "type": "git",
     "url": "https://github.com/brachypelma/preview-popup.git"
@@ -10,7 +9,14 @@
   "bugs": {
     "url": "https://github.com/brachypelma/preview-popup/issues"
   },
-  "keywords": ["some", "keywords", "to", "describe", "the", "package"],
+  "keywords": [
+    "preview",
+    "popup",
+    "pop-up",
+    "modal",
+    "link",
+    "iframe"
+  ],
   "private": false,
   "version": "0.0.0",
   "type": "module",
