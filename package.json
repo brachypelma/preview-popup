@@ -1,0 +1,41 @@
+{
+  "name": "preview-popup",
+  "description": "Preview link targets on hover in a modal iframe",
+  "author": "Eric Jonas <admin@confoundedtechnology.com> (confoundedtechnology.com)",
+  "homepage": "<YOUR_SITE_URL>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brachypelma/preview-popup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brachypelma/preview-popup/issues"
+  },
+  "keywords": ["some", "keywords", "to", "describe", "the", "package"],
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/preview-popup.umd.cjs",
+  "module": "./dist/preview-popup.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/preview-popup.js",
+      "require": "./dist/preview-popup.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0",
+    "vite-plugin-dts": "^3.2.0"
+  }
+}
