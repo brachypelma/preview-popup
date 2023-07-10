@@ -8,7 +8,8 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'preview-popup',
-      fileName: 'preview-popup',
+      fileName: 'index',
+      formats: ['cjs', 'es', 'umd'],
     },
   },
   plugins: [dts()],
