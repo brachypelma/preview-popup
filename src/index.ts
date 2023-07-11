@@ -1,5 +1,7 @@
 import addLinkListeners from "./add/add-link-listeners"
 import getFinalOptions from "./get/get-final-options"
+import getPopupTemplate from "./get/get-popup-template"
+import getStyleTag from "./get/get-style-tag"
 import { UserPreviewPopupOptions } from "./types"
 
 export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) {
@@ -11,6 +13,12 @@ export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) 
   if (!previewable?.length) return
 
   const options = getFinalOptions(userOptions)
+  const style = getStyleTag()
+  const template = getPopupTemplate()
 
-  previewable.forEach(e => addLinkListeners(e as HTMLAnchorElement, options))
+  document.body.append(style, template)
+
+  previewable.forEach(e => {
+    addLinkListeners(e as HTMLAnchorElement, options, template)
+  })
 }

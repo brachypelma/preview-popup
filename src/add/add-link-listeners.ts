@@ -3,11 +3,18 @@ import { FinalPreviewPopupOptions } from "../types"
 
 export default function addLinkListeners(
   link: HTMLAnchorElement,
-  options: FinalPreviewPopupOptions
+  options: FinalPreviewPopupOptions,
+  template: HTMLTemplateElement,
 ) {
   const { events } = options
 
   if (!events.length) return
 
-  events.forEach(e => link.addEventListener(e, () => handlePreviewStartEvent(e)))
+  events.forEach(e => {
+    link.addEventListener(e, () => {
+      handlePreviewStartEvent(e, options)
+    })
+  })
+
+  console.log(template)
 }
