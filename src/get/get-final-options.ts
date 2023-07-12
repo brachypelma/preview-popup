@@ -3,15 +3,17 @@ import {
   FinalPreviewPopupOptions,
 } from "../types";
 
-export default function getFinalOptions(userOptions: UserPreviewPopupOptions) {
-  const finalOptions: FinalPreviewPopupOptions = {
-    events: ['click', 'focus', 'mouseover']
+export default function getFinalOptions(
+  userOptions: UserPreviewPopupOptions,
+): FinalPreviewPopupOptions {
+  return {
+    events: ['click', 'focus', 'mouseover'],
+    size: 600,
+    aspectRatio: {
+      x: 4,
+      y: 3,
+    },
+    padding: 16,
+    ...userOptions,
   }
-
-  Object.keys(finalOptions).forEach((o) => {
-    const opt = o as keyof UserPreviewPopupOptions
-    if (userOptions[opt]) finalOptions[opt] = userOptions[opt]
-  })
-
-  return finalOptions
 }
