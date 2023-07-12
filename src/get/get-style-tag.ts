@@ -14,6 +14,7 @@ export default function getStyleTag(options: FinalPreviewPopupOptions) {
     .preview-popup {
       aspect-ratio: ${x}/${y};
       background-color: rgba(0,0,0,0);
+      overflow: hidden;
       padding: ${padding}px;
       width: min(100%, ${size}px);
       z-index: 1;
@@ -23,6 +24,7 @@ export default function getStyleTag(options: FinalPreviewPopupOptions) {
       border: none;
       width: 1200px;
       height: ${iframeHeight}px;
+      overflow: hidden;
       -ms-zoom: ${scale};
       -moz-transform: scale(${scale});
       -moz-transform-origin: 0 0;

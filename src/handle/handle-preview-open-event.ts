@@ -9,6 +9,8 @@ export default function handlePreviewOpenEvent(
 ) {
   const popup = document.querySelector(`#${id}`) as HTMLDialogElement
 
+  console.log(`handlePreviewOpenEvent`)
+
   if (popup) setPopupOpen(popup, href)
   else appendPopup(dialog, href)
 
