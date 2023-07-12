@@ -1,4 +1,4 @@
-export type PreviewPopupEvent = 'mouseover'|'focus'|'click'
+export type PreviewPopupEvent = 'mouseover'|'focus'
 
 export type UserPreviewPopupOptions = {
   events?: PreviewPopupEvent[],
