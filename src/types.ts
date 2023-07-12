@@ -1,7 +1,8 @@
-export type PreviewPopupEvent = 'mouseover'|'focus'
+export type PreviewPopupOpenEvent = 'mouseover'|'focus'
+export type PreviewPopupCloseEvent = 'mouseout'|'blur'
 
 export type UserPreviewPopupOptions = {
-  events?: PreviewPopupEvent[],
+  events?: PreviewPopupOpenEvent[],
   size?: number,
   aspectRatio?: {
     x: number,
@@ -11,7 +12,7 @@ export type UserPreviewPopupOptions = {
 }
 
 export type FinalPreviewPopupOptions = {
-  events: PreviewPopupEvent[],
+  events: PreviewPopupOpenEvent[],
   size: number,
   aspectRatio: {
     x: number,
