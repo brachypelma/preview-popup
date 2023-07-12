@@ -8,19 +8,20 @@ export default function setLinkListeners(
   { events }: FinalPreviewPopupOptions,
   { content: { firstElementChild } }: HTMLTemplateElement
 ) {
+  const href = link.getAttribute('href')
   const id = firstElementChild?.getAttribute('id')
 
-  if (!firstElementChild || !id) return
+  if (!firstElementChild || !href || !id) return
 
   events.forEach(e => {
     link.addEventListener(e, () => {
-      handlePreviewOpenEvent(firstElementChild, id)
+      handlePreviewOpenEvent(firstElementChild, href, id)
     })
   })
 
   events.map(e => getCloseEvent(e)).forEach(e => {
-    link.addEventListener(e, () => {
+    link.addEventListener(e, () => setTimeout(() => {
       handlePreviewCloseEvent(id)
-    })
-  })
+    }, 200)
+  )})
 }
