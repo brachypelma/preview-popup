@@ -19,7 +19,6 @@ export default function setLinkListeners(
 
   events.forEach(e => {
     link.addEventListener(e, () => {
-      console.debug(new Date().getTime())
       handlePreviewOpenEvent(dialog, href, id, previewable)
     })
   })

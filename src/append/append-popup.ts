@@ -6,6 +6,6 @@ export default function appendPopup(
 ) {
   const popup = dialog.cloneNode(true) as HTMLDialogElement
 
-  document.body.append(popup)
+  document.body.appendChild(popup)
   setPopupOpen(popup, href)
 }
