@@ -6,8 +6,8 @@ export default function handlePreviewCloseEvent(
 
   link.setAttribute('data-is-active', 'false')
 
-  window.setTimeout(() => {
+  setTimeout(() => {
     const isNoLinkActive = !document.querySelector('a[data-is-active="true"]')
     if (popup && isNoLinkActive) document.body.removeChild(popup)
-  }, 200)
+  }, 500)
 }

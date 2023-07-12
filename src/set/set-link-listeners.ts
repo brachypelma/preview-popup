@@ -1,5 +1,5 @@
 import getCloseEvent from "../get/get-close-event"
-// import handlePreviewCloseEvent from "../handle/handle-preview-close.event"
+import handlePreviewCloseEvent from "../handle/handle-preview-close.event"
 import handlePreviewOpenEvent from "../handle/handle-preview-open-event"
 import { FinalPreviewPopupOptions } from "../types"
 
@@ -19,14 +19,14 @@ export default function setLinkListeners(
 
   events.forEach(e => {
     link.addEventListener(e, () => {
-      console.log(new Date().getTime())
+      console.debug(new Date().getTime())
       handlePreviewOpenEvent(dialog, href, id, previewable)
     })
   })
 
   events.map(e => getCloseEvent(e)).forEach(e => {
     link.addEventListener(e, () => {
-      // handlePreviewCloseEvent(id, link)
+      handlePreviewCloseEvent(id, link)
     }
   )})
 }
