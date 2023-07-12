@@ -7,18 +7,22 @@ export default function getStyleTag(options: FinalPreviewPopupOptions) {
     padding,
   } = options
   const style = document.createElement('style')
-  const iframeHeight = 1200 * (x / y)
-  const scale = (size - (padding * 2)) / 1200
+  const iframeHeight = 1200 * (y / x)
+  const scale = size / 1200
 
   style.innerText = (`
     .preview-popup {
       aspect-ratio: ${x}/${y};
-      background-color: rgba(0,0,0,0);
       overflow: hidden;
       padding: ${padding}px;
       width: min(100%, ${size}px);
       z-index: 1;
     }
+    
+    .preview-popup::backdrop {
+      background-color: rgba(0,0,0,0);
+    }
+
     .preview-popup__iframe {
       aspect-ratio: ${x}/${y};
       border: none;

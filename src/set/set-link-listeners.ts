@@ -25,9 +25,11 @@ export default function setLinkListeners(
 
   events.map(e => getCloseEvent(e)).forEach(e => {
     link.addEventListener(e, () => {
-      timeout = setTimeout(() => {
-        handlePreviewCloseEvent(id)
-      }, 200)
+      if (!timeout) {
+        timeout = setTimeout(() => {
+          handlePreviewCloseEvent(id)
+        }, 200)
+      }
     }
   )})
 }
