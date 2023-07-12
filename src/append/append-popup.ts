@@ -1,11 +1,11 @@
-import setPopupSrc from "../set/set-popup-src"
+import setPopupOpen from "../set/set-popup-open"
 
 export default function appendPopup(
-  firstElementChild: Element,
+  dialog: HTMLDialogElement,
   href: string,
 ) {
-  const popup = firstElementChild.cloneNode(true) as Element
+  const popup = dialog.cloneNode(true) as HTMLDialogElement
 
   document.body.append(popup)
-  setPopupSrc(popup, href)
+  setPopupOpen(popup, href)
 }

@@ -1,13 +1,16 @@
 import appendPopup from "../append/append-popup"
-import setPopupSrc from "../set/set-popup-src"
+import setPopupOpen from "../set/set-popup-open"
 
 export default function handlePreviewOpenEvent(
-  firstElementChild: Element,
+  dialog: HTMLDialogElement,
   href: string,
   id: string,
+  timeout: NodeJS.Timeout|false
 ) {
-  const popup = document.querySelector(`#${id}`)
+  const popup = document.querySelector(`#${id}`) as HTMLDialogElement
 
-  if (popup) setPopupSrc(popup, href)
-  else appendPopup(firstElementChild, href)
+  if (popup) setPopupOpen(popup, href)
+  else appendPopup(dialog, href)
+
+  if (timeout) clearTimeout(timeout)
 }

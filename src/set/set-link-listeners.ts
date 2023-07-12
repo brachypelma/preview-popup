@@ -8,20 +8,26 @@ export default function setLinkListeners(
   { events }: FinalPreviewPopupOptions,
   { content: { firstElementChild } }: HTMLTemplateElement
 ) {
+  const dialog = firstElementChild?.tagName === 'DIALOG'
+    ? firstElementChild as HTMLDialogElement
+    : false
   const href = link.getAttribute('href')
   const id = firstElementChild?.getAttribute('id')
+  let timeout: NodeJS.Timeout|false = false
 
-  if (!firstElementChild || !href || !id) return
+  if (!dialog || !href || !id) return
 
   events.forEach(e => {
     link.addEventListener(e, () => {
-      handlePreviewOpenEvent(firstElementChild, href, id)
+      handlePreviewOpenEvent(dialog, href, id, timeout)
     })
   })
 
   events.map(e => getCloseEvent(e)).forEach(e => {
-    link.addEventListener(e, () => setTimeout(() => {
-      handlePreviewCloseEvent(id)
-    }, 200)
+    link.addEventListener(e, () => {
+      timeout = setTimeout(() => {
+        handlePreviewCloseEvent(id)
+      }, 200)
+    }
   )})
 }
