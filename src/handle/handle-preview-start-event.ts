@@ -1,12 +1,12 @@
-import {
-  FinalPreviewPopupOptions,
-  PreviewPopupEvent,
-} from "../types";
-
 export default function handlePreviewStartEvent(
-  event: PreviewPopupEvent,
-  options: FinalPreviewPopupOptions,
+  { content: { firstElementChild } }: HTMLTemplateElement
 ) {
-  console.log(event)
-  console.log(options)
+  const canAppend = (
+    firstElementChild &&
+    !document.querySelector(`#${firstElementChild.getAttribute('id')}`)
+  )
+
+  if (!canAppend) return
+
+  document.body.append(firstElementChild.cloneNode(true))
 }

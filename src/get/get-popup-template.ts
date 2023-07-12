@@ -3,7 +3,7 @@ export default function getPopupTemplate() {
   
   template.classList.add('preview-popup-source')
   template.innerHTML = `
-    <dialog class="preview-popup">
+    <dialog class="preview-popup" id="preview-popup">
       <iframe class="preview-popup__iframe"></iframe>
     </dialog>`
 
