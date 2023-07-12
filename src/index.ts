@@ -19,6 +19,6 @@ export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) 
   document.body.append(style, template)
 
   previewable.forEach(e => {
-    setLinkListeners(e as HTMLAnchorElement, options, template)
+    setLinkListeners(e as HTMLAnchorElement, previewable, options, template)
   })
 }
