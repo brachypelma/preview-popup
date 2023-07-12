@@ -8,7 +8,7 @@ export default function getFinalOptions(
 ): FinalPreviewPopupOptions {
   return {
     events: ['click', 'focus', 'mouseover'],
-    size: 600,
+    size: 400,
     aspectRatio: {
       x: 4,
       y: 3,

@@ -1,7 +1,7 @@
 import handlePreviewStartEvent from "../handle/handle-preview-start-event"
 import { FinalPreviewPopupOptions } from "../types"
 
-export default function addLinkListeners(
+export default function setLinkListeners(
   link: HTMLAnchorElement,
   options: FinalPreviewPopupOptions,
   template: HTMLTemplateElement,
