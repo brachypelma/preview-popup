@@ -6,7 +6,7 @@ import { FinalPreviewPopupOptions } from "../types"
 export default function setLinkListeners(
   link: HTMLAnchorElement,
   previewable: NodeListOf<Element>,
-  { events, size }: FinalPreviewPopupOptions,
+  { events, size, aspectRatio }: FinalPreviewPopupOptions,
   { content: { firstElementChild } }: HTMLTemplateElement
 ) {
   const dialog = firstElementChild?.tagName === 'DIALOG'
@@ -19,7 +19,7 @@ export default function setLinkListeners(
 
   events.forEach(e => {
     link.addEventListener(e, () => {
-      handlePreviewOpenEvent(dialog, href, id, previewable, size)
+      handlePreviewOpenEvent(dialog, href, id, previewable, size, aspectRatio)
     })
   })
 
