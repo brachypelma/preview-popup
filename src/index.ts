@@ -19,7 +19,7 @@ export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) 
 
   document.body.append(style, template)
 
-  setMouseMoveListener()
+  setMouseMoveListener(options)
 
   previewable.forEach(e => {
     setLinkListeners(e as HTMLAnchorElement, previewable, options, template)

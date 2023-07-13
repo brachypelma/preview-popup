@@ -1,16 +1,19 @@
-import getMouseCoordinateNum from "../get/get-mouse-coordinate-num"
 import getPopupCoordinate from "../get/get-popup-coordinate"
 import { PreviewPopupAspectRatio } from "../types"
 
 export default function setPopupPosition(
-  popup: HTMLDialogElement,
+  clientX: number,
+  clientY: number,
   size: number,
   { y }: PreviewPopupAspectRatio,
 ) {
-  const mouseX = getMouseCoordinateNum(popup, 'x')
-  const mouseY = getMouseCoordinateNum(popup, 'y')
-  const popupX = getPopupCoordinate(mouseX, size, innerWidth)
-  const popupY = getPopupCoordinate(mouseY, (size * y), innerHeight)
+  console.log('setPopupPosition')
+  const popup = document.querySelector('#preview-popup') as HTMLDialogElement
+
+  if (!popup) return
+
+  const popupX = getPopupCoordinate(clientX, size, innerWidth)
+  const popupY = getPopupCoordinate(clientY, (size * y), innerHeight)
 
   popup.setAttribute('style', `--x: ${popupX}px; --y: ${popupY}px`)
 }
