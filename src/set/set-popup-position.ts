@@ -12,5 +12,5 @@ export default function setPopupPosition(
   const popupX = getPopupCoordinate(mouseX, size, innerWidth)
   const popupY = getPopupCoordinate(mouseY, (size * y), innerHeight)
 
-  popup.setAttribute('style', `--x: ${popupX}; --y: ${popupY}`)
+  popup.setAttribute('style', `--x: ${popupX}px; --y: ${popupY}px`)
 }
