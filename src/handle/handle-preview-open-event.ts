@@ -7,11 +7,12 @@ export default function handlePreviewOpenEvent(
   href: string,
   id: string,
   previewable: NodeListOf<Element>,
+  size: number,
 ) {
   const popup = document.querySelector(`#${id}`) as HTMLDialogElement
 
-  if (popup) setPopupOpen(popup, href)
-  else appendPopup(dialog, href)
+  if (popup) setPopupOpen(popup, href, size)
+  else appendPopup(dialog, href, size)
 
   setActiveLink(href, previewable)
 }
