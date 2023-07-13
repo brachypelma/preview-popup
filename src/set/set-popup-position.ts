@@ -7,13 +7,10 @@ export default function setPopupPosition(
   size: number,
   { y }: PreviewPopupAspectRatio,
 ) {
-  const { innerWidth, innerHeight } = window
   const mouseX = getMouseCoordinateNum(popup, 'x')
   const mouseY = getMouseCoordinateNum(popup, 'y')
-  const popupHeight = size * y
-
   const popupX = getPopupCoordinate(mouseX, size, innerWidth)
-  const popupY = getPopupCoordinate(mouseY, popupHeight, innerHeight)
+  const popupY = getPopupCoordinate(mouseY, (size * y), innerHeight)
 
   popup.setAttribute('style', `--x: ${popupX}; --y: ${popupY}`)
 }
