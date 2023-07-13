@@ -13,6 +13,7 @@ export default function getStyleTag(options: FinalPreviewPopupOptions) {
   style.innerText = (`
     .preview-popup {
       aspect-ratio: ${x}/${y};
+      inset: var(--x) var(--y) auto auto;
       overflow: hidden;
       padding: ${padding}px;
       width: min(100%, ${size}px);
