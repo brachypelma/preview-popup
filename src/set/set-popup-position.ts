@@ -11,8 +11,8 @@ export default function setPopupPosition(
 
   if (!popup) return
 
-  const popupX = getPopupCoordinate(clientX + 16, size, innerWidth)
-  const popupY = getPopupCoordinate(clientY + 16, (size * (x / y)), innerHeight)
+  const popupX = getPopupCoordinate(clientX, size, innerWidth)
+  const popupY = getPopupCoordinate(clientY, (size * (x / y)), innerHeight)
 
   popup.setAttribute('style', `--x: ${popupX}px; --y: ${popupY}px`)
 }

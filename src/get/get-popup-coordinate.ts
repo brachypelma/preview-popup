@@ -3,7 +3,7 @@ export default function getPopupCoordinate(
   popupDimension: number,
   windowLimit: number,
 ) {
-  return ((mouseCoord + popupDimension) > windowLimit)
-    ? (windowLimit - popupDimension)
-    : mouseCoord
+  return (mouseCoord + popupDimension) > windowLimit
+    ? windowLimit - popupDimension + 16
+    : mouseCoord + 16
 }
