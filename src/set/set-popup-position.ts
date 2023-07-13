@@ -1,18 +1,14 @@
 import getPopupCoordinate from "../get/get-popup-coordinate"
-import { PreviewPopupAspectRatio } from "../types"
 
-export default function setPopupPosition(
-  clientX: number,
-  clientY: number,
-  size: number,
-  { x, y }: PreviewPopupAspectRatio,
-) {
+export default function setPopupPosition(clientX: number, clientY: number) {
   const popup = document.querySelector('#preview-popup') as HTMLDialogElement
 
   if (!popup) return
 
-  const popupX = getPopupCoordinate(clientX, size, innerWidth)
-  const popupY = getPopupCoordinate(clientY, (size * (x / y)), innerHeight)
+  const popupWidth = popup.offsetWidth
+  const popupHeight = popup.offsetHeight
+  const popupX = getPopupCoordinate(clientX, popupWidth, innerWidth)
+  const popupY = getPopupCoordinate(clientY, popupHeight, innerHeight)
 
   popup.setAttribute('style', `--x: ${popupX}px; --y: ${popupY}px`)
 }

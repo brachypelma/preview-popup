@@ -1,12 +1,9 @@
-import { FinalPreviewPopupOptions } from "../types";
 import throttle from "../utils/throttle";
-import setPopupPosition from "./set-popup-position";
+import setPopupPosition from "./set-popup-position"
 
-export default function setMouseMoveListener(
-  { size, aspectRatio }: FinalPreviewPopupOptions,
-) {
+export default function setMouseMoveListener() {
   const updateMousePos = throttle((clientX: number, clientY: number) => {
-    setPopupPosition(clientX, clientY, size, aspectRatio)
+    setPopupPosition(clientX, clientY)
   })
 
   window.addEventListener('mousemove', ({ clientX, clientY }) => {
