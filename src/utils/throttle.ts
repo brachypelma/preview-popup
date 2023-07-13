@@ -1,6 +1,6 @@
 export default function throttle(
   cb: CallableFunction,
-  delay = 300,
+  delay = 100,
 ) {
   let shouldWait = false
 
