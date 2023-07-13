@@ -3,6 +3,7 @@ import getPopupTemplate from "./get/get-popup-template"
 import getStyleTag from "./get/get-style-tag"
 import setLinkListeners from "./set/set-link-listeners"
 import setMouseMoveListener from "./set/set-mouse-move-listener"
+import setWindowKeyEvents from "./set/set-window-key-events"
 import { UserPreviewPopupOptions } from "./types"
 
 export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) {
@@ -20,6 +21,7 @@ export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) 
   document.body.append(style, template)
 
   setMouseMoveListener(options)
+  setWindowKeyEvents()
 
   previewable.forEach(e => {
     setLinkListeners(e as HTMLAnchorElement, previewable, options, template)
