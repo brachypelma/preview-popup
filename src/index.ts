@@ -10,6 +10,7 @@ import { UserPreviewPopupOptions } from "./types"
  * 
  * 1. Add callback hooks to options (before/after open/close)
  * 2. Add HTML inlets that can be set in options
+ * 3. Rescale iframe on window resize
  */
 
 export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) {
