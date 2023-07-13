@@ -6,9 +6,11 @@ export default function getStyleTag(options: FinalPreviewPopupOptions) {
     aspectRatio: { x, y },
     padding,
   } = options
+  const { innerWidth } = window
   const style = document.createElement('style')
-  const iframeHeight = 1200 * (y / x)
-  const scale = size / 1200
+  const popupWidth = size > innerWidth ? innerWidth : size
+  const iframeHeight = innerWidth * (y / x)
+  const scale = popupWidth / innerWidth
 
   style.innerText = (`
     .preview-popup {
@@ -16,7 +18,7 @@ export default function getStyleTag(options: FinalPreviewPopupOptions) {
       inset: var(--y) auto auto var(--x);
       overflow: hidden;
       padding: ${padding}px;
-      width: min(100%, ${size}px);
+      width: min(100%, ${popupWidth}px);
       z-index: 1;
     }
     
@@ -27,7 +29,7 @@ export default function getStyleTag(options: FinalPreviewPopupOptions) {
     .preview-popup__iframe {
       aspect-ratio: ${x}/${y};
       border: none;
-      width: 1200px;
+      width: ${innerWidth}px;
       height: ${iframeHeight}px;
       overflow: hidden;
       -ms-zoom: ${scale};
