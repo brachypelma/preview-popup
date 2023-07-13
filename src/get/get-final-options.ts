@@ -7,7 +7,6 @@ export default function getFinalOptions(
   userOptions: UserPreviewPopupOptions,
 ): FinalPreviewPopupOptions {
   return {
-    events: ['focus', 'mouseover'],
     size: 400,
     aspectRatio: {
       x: 4,
