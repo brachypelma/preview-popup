@@ -9,7 +9,7 @@ export default function setPopupOpen(
   // Add customizable text to top of dialog
   iframe.setAttribute('src', href)
 
-  if (!popup.getAttribute('style')) window.dispatchEvent(new Event('mousemove'))
+  window.dispatchEvent(new Event('mousemove'))
 
   popup.show()
 }
