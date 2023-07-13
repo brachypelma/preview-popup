@@ -5,6 +5,13 @@ import setLinkListeners from "./set/set-link-listeners"
 import setMouseMoveListener from "./set/set-mouse-move-listener"
 import { UserPreviewPopupOptions } from "./types"
 
+/**
+ * TO DO
+ * 
+ * 1. Add callback hooks to options (before/after open/close)
+ * 2. Add HTML inlets that can be set in options
+ */
+
 export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) {
   // Make sure we are in a browser environment
   if (typeof window === 'undefined') return
