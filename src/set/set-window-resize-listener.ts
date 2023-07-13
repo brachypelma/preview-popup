@@ -3,7 +3,7 @@ import { FinalPreviewPopupOptions } from "../types";
 import handleStyleTagUpdate from "../handle/handle-style-tag-update";
 
 export default function setWindowResizeListener(options: FinalPreviewPopupOptions) {
-  const updatePopupStyleTagInnerText = throttle(() => handleStyleTagUpdate(options))
+  const updatePopupStyleTagInnerText = throttle(() => handleStyleTagUpdate(options), 250)
 
   window.addEventListener('resize', () => {
     updatePopupStyleTagInnerText()
