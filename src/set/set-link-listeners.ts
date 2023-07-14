@@ -1,4 +1,3 @@
-import callCb from "../utils/call-cb"
 import handlePreviewCloseEvent from "../handle/handle-preview-close.event"
 import handlePreviewOpenEvent from "../handle/handle-preview-open-event"
 import { FinalPreviewPopupOptions } from "../types"
@@ -18,14 +17,14 @@ export default function setLinkListeners(
   if (!dialog || !href || !id) return
 
   link.addEventListener('mouseenter', () => {
-    callCb(beforeOpen)
+    beforeOpen()
     handlePreviewOpenEvent(dialog, href, id, previewable)
-    callCb(beforeClose)
+    afterOpen()
   })
   
   link.addEventListener('mouseleave', () => {
-    callCb(afterOpen)
+    beforeClose()
     handlePreviewCloseEvent(id, link)
-    callCb(afterClose)
+    afterClose()
   })
 }

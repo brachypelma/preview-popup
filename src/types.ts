@@ -1,4 +1,4 @@
-export type PreviewPopupCallback = (...args: any[]) => any
+export type PreviewPopupCallback = () => any
 
 export type UserPreviewPopupOptions = {
   size?: number,
@@ -24,8 +24,8 @@ export type FinalPreviewPopupOptions = {
   padding: number,
   htmlAboveIframe: string,
   htmlBelowIframe: string,
-  beforeOpen?: PreviewPopupCallback,
-  afterOpen?: PreviewPopupCallback,
-  beforeClose?: PreviewPopupCallback,
-  afterClose?: PreviewPopupCallback,
+  beforeOpen: PreviewPopupCallback,
+  afterOpen: PreviewPopupCallback,
+  beforeClose: PreviewPopupCallback,
+  afterClose: PreviewPopupCallback,
 }
