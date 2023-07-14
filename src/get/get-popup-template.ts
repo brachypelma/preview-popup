@@ -8,9 +8,13 @@ export default function getPopupTemplate(
   template.classList.add('preview-popup-source')
   template.innerHTML = `
     <dialog class="preview-popup" id="preview-popup">
-      ${htmlAboveIframe}
+      <div clas="preview-popup__inlet preview-popup__inlet--top">
+        ${htmlAboveIframe}
+      </div>
       <iframe class="preview-popup__iframe"></iframe>
-      ${htmlBelowIframe}
+      <div clas="preview-popup__inlet preview-popup__inlet--bottom">
+        ${htmlBelowIframe}
+      </div>
     </dialog>`
 
   return template
