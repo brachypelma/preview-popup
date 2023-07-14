@@ -24,7 +24,7 @@ export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) 
 
   const options = getFinalOptions(userOptions)
   const style = getStyleTag(options)
-  const template = getPopupTemplate()
+  const template = getPopupTemplate(options)
 
   document.body.append(style, template)
 
