@@ -20,8 +20,8 @@ export type FinalPreviewPopupOptions = {
     y: number,
   },
   padding: number,
-  beforeOpen: PreviewPopupCallback,
-  afterOpen: PreviewPopupCallback,
-  beforeClose: PreviewPopupCallback,
-  afterClose: PreviewPopupCallback,
+  beforeOpen?: PreviewPopupCallback,
+  afterOpen?: PreviewPopupCallback,
+  beforeClose?: PreviewPopupCallback,
+  afterClose?: PreviewPopupCallback,
 }
