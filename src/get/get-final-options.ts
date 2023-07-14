@@ -15,6 +15,10 @@ export default function getFinalOptions(
     padding: 16,
     htmlAboveIframe: '',
     htmlBelowIframe: '',
+    beforeOpenArgs: [],
+    afterOpenArgs: [],
+    beforeCloseArgs: [],
+    afterCloseArgs: [],
     ...userOptions,
   }
 }

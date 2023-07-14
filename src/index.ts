@@ -6,12 +6,6 @@ import setMouseMoveListener from "./set/set-mouse-move-listener"
 import setWindowResizeListener from "./set/set-window-resize-listener"
 import { UserPreviewPopupOptions } from "./types"
 
-/**
- * TO DO
- * 
- * 1. Add callback hooks to options (before/after open/close)
- */
-
 export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) {
   // Make sure we are in a browser environment
   if (typeof window === 'undefined') return
