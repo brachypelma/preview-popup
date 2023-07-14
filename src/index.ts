@@ -14,7 +14,9 @@ import { UserPreviewPopupOptions } from "./types"
  * 3. Rescale iframe on window resize
  */
 
-export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) {
+export default function previewPopup(
+  userOptions: UserPreviewPopupOptions = { beforeOpen: (a) => console.log(a) }
+) {
   // Make sure we are in a browser environment
   if (typeof window === 'undefined') return
 
@@ -32,6 +34,6 @@ export default function previewPopup(userOptions: UserPreviewPopupOptions = {}) 
   setWindowResizeListener(options)
 
   previewable.forEach(e => {
-    setLinkListeners(e as HTMLAnchorElement, previewable, template)
+    setLinkListeners(e as HTMLAnchorElement, options, previewable, template)
   })
 }

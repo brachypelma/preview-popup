@@ -1,8 +1,11 @@
+import callHookFunc from "../call/call-hook-func"
 import handlePreviewCloseEvent from "../handle/handle-preview-close.event"
 import handlePreviewOpenEvent from "../handle/handle-preview-open-event"
+import { FinalPreviewPopupOptions } from "../types"
 
 export default function setLinkListeners(
   link: HTMLAnchorElement,
+  options: FinalPreviewPopupOptions,
   previewable: NodeListOf<Element>,
   { content: { firstElementChild } }: HTMLTemplateElement
 ) {
@@ -15,6 +18,7 @@ export default function setLinkListeners(
   if (!dialog || !href || !id) return
 
   link.addEventListener('mouseenter', () => {
+    if (options.beforeOpen) callHookFunc(options.beforeOpen)
     handlePreviewOpenEvent(dialog, href, id, previewable)
   })
   
