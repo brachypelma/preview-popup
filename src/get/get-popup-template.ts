@@ -11,7 +11,9 @@ export default function getPopupTemplate(
       <div clas="preview-popup__inlet preview-popup__inlet--top">
         ${htmlAboveIframe}
       </div>
-      <iframe class="preview-popup__iframe"></iframe>
+      <div class="preview-popup__iframe-container">
+        <iframe class="preview-popup__iframe"></iframe>
+      </div>
       <div clas="preview-popup__inlet preview-popup__inlet--bottom">
         ${htmlBelowIframe}
       </div>
