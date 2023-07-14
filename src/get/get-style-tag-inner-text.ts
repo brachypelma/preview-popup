@@ -21,7 +21,7 @@ export default function getStyleTagInnerText(options: FinalPreviewPopupOptions) 
       padding: ${padding}px;
       width: min(100%, ${popupWidth}px);
     }
-    
+
     .preview-popup::backdrop {
       background-color: rgba(0,0,0,0);
     }
