@@ -14,6 +14,9 @@ export default function getFinalOptions(
     },
     padding: 16,
     beforeOpen: () => {},
+    afterOpen: () => {},
+    beforeClose: () => {},
+    afterClose: () => {},
     ...userOptions,
   }
 }
