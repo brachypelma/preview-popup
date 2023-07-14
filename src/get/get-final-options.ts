@@ -13,10 +13,8 @@ export default function getFinalOptions(
       y: 3,
     },
     padding: 16,
-    beforeOpen: () => {},
-    afterOpen: () => {},
-    beforeClose: () => {},
-    afterClose: () => {},
+    htmlAboveIframe: '',
+    htmlBelowIframe: '',
     ...userOptions,
   }
 }

@@ -11,6 +11,8 @@ export type UserPreviewPopupOptions = {
   afterOpen?: PreviewPopupCallback,
   beforeClose?: PreviewPopupCallback,
   afterClose?: PreviewPopupCallback,
+  htmlAboveIframe?: string,
+  htmlBelowIframe?: string,
 }
 
 export type FinalPreviewPopupOptions = {
@@ -24,4 +26,6 @@ export type FinalPreviewPopupOptions = {
   afterOpen?: PreviewPopupCallback,
   beforeClose?: PreviewPopupCallback,
   afterClose?: PreviewPopupCallback,
+  htmlAboveIframe: string,
+  htmlBelowIframe: string,
 }
