@@ -1,4 +1,4 @@
-import callHookFunc from "../call/call-hook-func"
+import callHookFunc from "../utils/call-hook-func"
 import handlePreviewCloseEvent from "../handle/handle-preview-close.event"
 import handlePreviewOpenEvent from "../handle/handle-preview-open-event"
 import { FinalPreviewPopupOptions } from "../types"
