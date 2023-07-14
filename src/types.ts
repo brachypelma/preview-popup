@@ -7,12 +7,12 @@ export type UserPreviewPopupOptions = {
     y: number,
   },
   padding?: number,
+  htmlAboveIframe?: string,
+  htmlBelowIframe?: string,
   beforeOpen?: PreviewPopupCallback,
   afterOpen?: PreviewPopupCallback,
   beforeClose?: PreviewPopupCallback,
   afterClose?: PreviewPopupCallback,
-  htmlAboveIframe?: string,
-  htmlBelowIframe?: string,
 }
 
 export type FinalPreviewPopupOptions = {
@@ -22,10 +22,10 @@ export type FinalPreviewPopupOptions = {
     y: number,
   },
   padding: number,
+  htmlAboveIframe: string,
+  htmlBelowIframe: string,
   beforeOpen?: PreviewPopupCallback,
   afterOpen?: PreviewPopupCallback,
   beforeClose?: PreviewPopupCallback,
   afterClose?: PreviewPopupCallback,
-  htmlAboveIframe: string,
-  htmlBelowIframe: string,
 }
