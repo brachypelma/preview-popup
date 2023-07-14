@@ -13,7 +13,7 @@ export default function getFinalOptions(
       y: 3,
     },
     padding: 16,
-    htmlAboveIframe: '<p>Preview:</p>',
+    htmlAboveIframe: '<b>Page Preview:</b>',
     htmlBelowIframe: '',
     beforeOpen: () => {},
     afterOpen: () => {},

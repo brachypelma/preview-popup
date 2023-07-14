@@ -16,6 +16,7 @@ export default function getStyleTagInnerText(options: FinalPreviewPopupOptions) 
       aspect-ratio: ${x}/${y};
       display: flex;
       flex-direction: column;
+      gap: 0.5rem;
       inset: var(--y) auto auto var(--x);
       overflow: hidden;
       padding: ${padding}px;
