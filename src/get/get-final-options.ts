@@ -13,6 +13,7 @@ export default function getFinalOptions(
       y: 3,
     },
     padding: 16,
+    beforeOpen: () => {},
     ...userOptions,
   }
 }
